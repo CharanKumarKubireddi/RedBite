@@ -24,16 +24,6 @@ app.use(
     credentials: true
   })
 );
-// Handle preflight requests for all routes
-app.options("*", cors({
-  origin: [
-    "https://red-bite.vercel.app",
-    "https://red-bite-admin.vercel.app"
-  ],
-  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-  allowedHeaders: ["Content-Type", "Authorization", "token"],
-  credentials: true
-}));
 
 
 
