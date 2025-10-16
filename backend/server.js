@@ -13,16 +13,17 @@ const app = express();
 
 // Middleware
 app.use(express.json());
-app.use(cors({
-  origin: [
-    "https://red-bite.vercel.app",       // frontend
-    "https://red-bite-admin.vercel.app"  // admin (if different domain)
-  ],
-  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-  allowedHeaders: ["Content-Type", "Authorization"],
-  credentials: true
-}));
-
+app.use(
+  cors({
+    origin: [
+      "https://red-bite.vercel.app",       // frontend
+      "https://red-bite-admin.vercel.app"  // admin
+    ],
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+    credentials: true
+  })
+);
 
 // DB connection
 connectDB();
@@ -35,8 +36,12 @@ app.use("/api/cart", cartRouter);
 app.use("/api/order", orderRouter);
 
 app.get("/", (req, res) => {
-  res.send("API Working");
+  res.send("✅ API is Working — Render Deployment Successful!");
 });
 
+// --- 🔥 START SERVER (Render needs this) ---
+const PORT = process.env.PORT || 4000;
 
-export default app;
+app.listen(PORT, () => {
+  console.log(`🚀 Server running on port ${PORT}`);
+});
