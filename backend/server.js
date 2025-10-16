@@ -16,14 +16,15 @@ app.use(express.json());
 app.use(
   cors({
     origin: [
-      "https://red-bite.vercel.app",       // frontend
-      "https://red-bite-admin.vercel.app"  // admin
+      "https://red-bite.vercel.app",
+      "https://red-bite-admin.vercel.app"
     ],
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-    allowedHeaders: ["Content-Type", "Authorization"],
+    allowedHeaders: ["Content-Type", "Authorization", "token"], 
     credentials: true
   })
 );
+
 
 // DB connection
 connectDB();
