@@ -45,6 +45,9 @@
     cursor:pointer;
 }
 
+.search_icon{
+    display:none;
+}
 .navbar-search-icon{
     position: relative;
 }
