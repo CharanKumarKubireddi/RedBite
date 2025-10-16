@@ -14,4 +14,4 @@ export const assets ={
     parcel_icon
 }
 
-export const url = 'https://red-bite-backend.vercel.app'
+export const url = 'https://redbite-backend.onrender.com'
