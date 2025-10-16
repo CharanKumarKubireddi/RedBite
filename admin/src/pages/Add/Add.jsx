@@ -31,7 +31,7 @@ const Add = ({url}) => {
     formData.append("category", data.category);
     formData.append("image", image);
     const response = await axios.post(`${url}/api/food/add`, formData, {
-      headers: { "Context-Type": "multipart/form-data" },
+      headers: { "Content-Type": "multipart/form-data" },
     });
     if (response.data.success) {
       setData({
